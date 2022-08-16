@@ -2,7 +2,7 @@
 
 ## Javascript
 
-## Dont write multiple statement into the single line
+### Dont write multiple statement into the single line
 Reading multple statement written in single line is hard to read and hard to debug
 
 Bad
@@ -20,7 +20,7 @@ event => {
 }
 ```
 
-## Dont do comma expressions
+### Dont do comma expressions
 Don't separate operator by a comma. There are very few use cases to do it and writing a handle is not it
 
 
