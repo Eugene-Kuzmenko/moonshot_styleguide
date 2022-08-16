@@ -39,6 +39,9 @@ event => {
 }
 ```
 
+### Please don't write one letter variable names unless its `i`
+It's much easier to read meaningful parameter names, even if you've seen `event` shortened to `e` in some guides
+
 ## Typescript
 
 ### Avoid optional fields when they're not needed
