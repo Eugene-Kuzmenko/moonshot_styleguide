@@ -26,6 +26,12 @@ If you have have a lot of nesting in your component or it start to excede 200 li
 Local components are put into ParentComponentPath/components/Component
 If you have styles that only concern that component move them into its own module
 
+### Avoid magic numbers
+Numbers and colors are to move into the constants
+
+### Constants
+Constants are written in SHOUT_CASE
+
 ## SCSS
 
 ### Don't nest classess
