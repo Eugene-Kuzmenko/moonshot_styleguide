@@ -45,6 +45,11 @@ Bad:
 HEIGHT + ' px'
 ```
 
+### Dont use array index as key
+React uses key to decide which element corresponds to which between old version of the dom and the new one
+If you will use index and the array you're mapping will change, it will get it wrong and all components whose values
+were shifted would end up rerendering
+
 ## SCSS
 
 ### Don't nest classess
