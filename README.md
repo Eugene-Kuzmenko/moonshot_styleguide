@@ -2,7 +2,7 @@
 
 ## Typescript
 
-### Avoid optional fields when not needed
+### Avoid optional fields when they're not needed
 If you guarantied to have certain value don't make field optional. It would make typisation less useful and force you to do extra null checks
 
 ## React
