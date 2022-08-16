@@ -1,5 +1,16 @@
 # Style guide
 
+## Javascript
+
+## Dont do comma expressions
+Don't separate operator by a comma. There are very few use cases to do it and writing a handle is not it
+
+```typescript
+e => {
+    setIsOpen(!isOpen), e.preventDefault();
+}
+```
+
 ## Typescript
 
 ### Avoid optional fields when they're not needed
