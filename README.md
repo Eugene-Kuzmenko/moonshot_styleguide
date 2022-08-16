@@ -2,7 +2,7 @@
 
 ## React
 
-### Dont useMemo on simple expressions
+### Dont use useMemo on simple expressions
 There is no need to memo logical expression or ternary operator
 Memoisation check would be heaview
 Just memo stuff that require iteration, like string search or filtering the collection
@@ -12,7 +12,7 @@ If you have a function that doesn't use any of the variables declared within the
 or maybe into util file
 That way it won't be redeclared and you could potentially share it between the component if you encounter a case for it. You could then simply move it into util
 
-### Dont useCallback, unless you pass the function to a component
+### Dont use useCallback, unless you pass the function to a component
 useCallback is made to prevent rerenders when you pass callback to component, that using use memo HOC or extends PureComponent. Otherwise it doesn't provide any benefit. So if you need to declare function within the component, then just declare it without useCallback, or, if it doesn't use anything within the component declare it outside
 
 
