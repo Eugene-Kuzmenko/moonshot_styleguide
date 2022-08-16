@@ -27,7 +27,7 @@ Local components are put into ParentComponentPath/components/Component
 If you have styles that only concern that component move them into its own module
 
 ### Avoid magic numbers
-Numbers and colors are to move into the constants
+Numbers and colors are to be moved into the constants
 
 ### Constants
 Constants are written in SHOUT_CASE
