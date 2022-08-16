@@ -1,5 +1,10 @@
 # Style guide
 
+## Typescript
+
+### Avoid optional fields when not needed
+If you guarantied to have certain value don't make field optional. It would make typisation less useful and force you to do extra null checks
+
 ## React
 
 ### Dont use useMemo on simple expressions
