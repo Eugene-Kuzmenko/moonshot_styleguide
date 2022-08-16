@@ -32,6 +32,18 @@ Numbers and colors are to be moved into the constants
 ### Constants
 Constants are written in SHOUT_CASE
 
+### Use string interpolation
+Use string interpolation syntax instead of concatenation
+Good:
+```javascript
+`${HEIGHT} px`
+```
+
+Bad:
+```
+HEIGHT + ' px'
+```
+
 ## SCSS
 
 ### Don't nest classess
