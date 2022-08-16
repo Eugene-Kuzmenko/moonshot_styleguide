@@ -34,13 +34,14 @@ Constants are written in SHOUT_CASE
 
 ### Use string interpolation
 Use string interpolation syntax instead of concatenation
+
 Good:
 ```javascript
 `${HEIGHT} px`
 ```
 
 Bad:
-```
+```javascript
 HEIGHT + ' px'
 ```
 
