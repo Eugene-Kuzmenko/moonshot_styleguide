@@ -201,7 +201,7 @@ Bad
 ```
 
 Good
-```
+```scss
 .noText {
   //...
 }
