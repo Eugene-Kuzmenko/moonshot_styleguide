@@ -148,7 +148,7 @@ Very Bad
 <div 
   className={cx(
     styles.name,
-    styles[isPrimary && 'primary'],
+    styles[`${isPrimary && 'primary'}`],
   )}
 />
 ```
