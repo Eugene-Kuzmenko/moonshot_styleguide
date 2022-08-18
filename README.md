@@ -189,3 +189,19 @@ problem is increased by 4 spaces indentation set for editor project
 
 ### Location of the component is not part of the component
 Avoid putting margins or position  within the components outermost tag. Instead pass className with required margin style. That way it's more easy to reuse component 
+
+### Avoid using "-" in class names in scss modules
+You would need to use styles object to get classname from scss module. It would be cleaner if you wouldn't need to access it with \[\]. Apply js naming conventions since you would use it in js
+
+Bad
+```scss
+.no-text {
+  //...
+}
+```
+
+Good
+```
+.noText {
+  //...
+}
