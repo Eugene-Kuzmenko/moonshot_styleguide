@@ -82,20 +82,100 @@ Constants are written in SHOUT_CASE
 ### Use string interpolation
 Use string interpolation syntax instead of concatenation
 
-Good:
-```javascript
-`${HEIGHT} px`
-```
-
 Bad:
 ```javascript
 HEIGHT + ' px'
+```
+
+Good:
+```javascript
+`${HEIGHT} px`
 ```
 
 ### Dont use array index as key
 React uses key to decide which element corresponds to which between old version of the dom and the new one
 If you will use index and the array you're mapping will change, it will get it wrong and all components whose values
 were shifted would end up rerendering
+
+### Multiple classnames
+For multiple classnames use classnames library. 
+Since we've started importing it as `cx`, import it as such
+Although you can, there is no need to pass them as an array. It unnecessary increases clutter
+
+Bad
+```javascript
+<div className={`some-global ${styles.button} {styles.primary}`} />
+```
+
+Bad
+```javascript
+<div className={cx(['some-global', styles.button, styles.primary])} />
+```
+
+Good
+```javascript
+<div className={cx('some-global', styles.button, styles.primary)} />
+```
+
+### Conditional classnames
+When using classnames function, pass object to determine which styles apply conditionally
+Field is a class name, value is a condition. Dont conditionally dont use "and" operator to pass field name to `styles` object conditionally or to pass class name to `classname` function conditionally
+Don't pass multiple objects to create multiple condition
+
+Bad
+```jsx
+<div 
+  className={cx(
+    styles.button,
+    isPrimary && styles.primary,
+  )}
+/>
+```
+
+Bad
+```
+<div
+  className={cx(
+    styles.button,
+    { [styles.primary]: isPrimary },
+    { [styles.big]: isBig },
+  )}
+/>
+```
+
+Very Bad
+```jsx
+<div 
+  className={cx(
+    styles.name,
+    styles[isPrimary && 'primary'],
+  )}
+/>
+```
+
+Good
+```jsx
+<div
+  className={cx(
+    styles.button,
+    {
+      [styles.primary]: isPrimary,
+      [styles.big]: isBig,
+    }
+  )}
+/>
+```
+
+Good
+```jsx
+<div
+  className={cx(styles.button, {
+    [styles.primary]: isPrimary,
+    [styles.big]: isBig,
+  })}
+/>
+```
+
 
 ## SCSS
 
