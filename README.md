@@ -187,7 +187,7 @@ return (
   <button 
     onClick={useCallback(() => {
       onClick();
-    }, [onClick]}
+    }, [onClick])}
   />
 )
 ```
@@ -196,7 +196,7 @@ Good
 ```jsx
 const handleClick = useCallback(() => {
   onClick();
-}, [onClick]
+}, [onClick]);
 
 return (
   <button onClick={handleClick} />
