@@ -176,6 +176,32 @@ Good
 />
 ```
 
+## Don't pass hooks into props
+It's becomes hard to modify, read and debug, if hook is passed into props, instead of being on the 
+top level
+For example if you need to render the block conditionally in the future, you would need to move the hook out first
+
+Bad
+```jsx
+return (
+  <button 
+    onClick={useCallback(() => {
+      onClick();
+    }, [onClick]}
+  />
+)
+```
+
+Good
+```jsx
+const handleClick = useCallback(() => {
+  onClick();
+}, [onClick]
+
+return (
+  <button onClick={handleClick} />
+)
+```
 
 ## Styles
 
