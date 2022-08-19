@@ -133,7 +133,7 @@ Bad
 ```
 
 Bad
-```
+```jsx
 <div
   className={cx(
     styles.button,
