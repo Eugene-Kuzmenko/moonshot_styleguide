@@ -179,7 +179,7 @@ Good
 
 ## Styles
 
-### Don't nest classess
+### Don't nest classess needlessly
 When using modules don't nest classess unless you specifically need extra
 specificity to override third party class or to reuse class in
 certain context within the component
