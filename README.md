@@ -213,7 +213,7 @@ It would signal IDE that contents of the string
 Bad
 ```javascript
 const Component = styled.div`
-  {props => `
+  ${props => `
     color: ${props.colors.red},
   `}
 `
@@ -222,7 +222,7 @@ const Component = styled.div`
 Good
 ```javascript
 const Component = styled.div`
-  {props => css`
+  ${props => css`
     color: ${props.colors.red},
   `}
 `
