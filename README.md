@@ -205,6 +205,7 @@ Good
 .noText {
   //...
 }
+```
 
 ### For fragments in styled components use `css` wrapper
 It would signal IDE that contents of the string 
