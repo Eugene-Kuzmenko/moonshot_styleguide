@@ -177,7 +177,7 @@ Good
 ```
 
 
-## SCSS
+## Styles
 
 ### Don't nest classess
 When using modules don't nest classess unless you specifically need extra
@@ -205,3 +205,25 @@ Good
 .noText {
   //...
 }
+
+### For fragments in styled components use `css` wrapper
+It would signal IDE that contents of the string 
+
+Bad
+```javascript
+const Component = styled.div`
+  {props => `
+    color: ${props.colors.red},
+  `}
+`
+```
+
+Good
+```javascript
+const Component = styled.div`
+  {props => css`
+    color: ${props.colors.red},
+  `}
+`
+```
+
