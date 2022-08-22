@@ -47,6 +47,33 @@ It's much easier to read meaningful parameter names, even if you've seen `event`
 ### Avoid optional fields when they're not needed
 If you guarantied to have certain value don't make field optional. It would make typisation less useful and force you to do extra null checks
 
+### Prefer named interfaces, especially if the type is repeated
+It isn't really readable when you define inline types. Inline object types are looking very simillar to object definition. If used in array, inline object types make array sign easily missed. If you define interace, it would also help you avoid repeating types and add purpose to the type
+
+Bad
+```typescript
+const all = {
+  ...reduceAssets(
+    components as {
+      assets: { id: number; uuid: string; name: string }[];
+    }[]
+  ),
+}
+```
+
+Good
+```typescript
+interface Asset {
+  id: number; 
+  uuid: string;
+  name: string
+}
+
+const all = {
+  ...reduceAssets(components as Asset[]),
+}
+```
+
 ## React
 
 ### Dont use useMemo on simple expressions
