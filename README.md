@@ -203,6 +203,17 @@ return (
 )
 ```
 
+### *Do not* mutate props
+It will cause issues that are hard to debug. It goes against how React is expected to work
+If you need to mutate a field during render for some reason, then the thing you're assigning probably should be declared in the component above
+
+Bad
+```javscript
+const { editorManager } = props;
+
+editorManager.cms = cms;
+```
+
 ## Styles
 
 ### Don't nest classess needlessly
