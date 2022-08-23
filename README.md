@@ -259,6 +259,9 @@ const { editorManager } = props;
 editorManager.cms = cms;
 ```
 
+### There should be only one file per component
+It gets very confusing and hard to navigate if there are multiple components in a single file
+
 ## Styles
 
 ### Don't nest classess needlessly
