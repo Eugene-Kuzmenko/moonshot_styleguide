@@ -53,7 +53,7 @@ Bad
 ```
 
 
-Bad
+Good
 ```javascript
     getPrime() {
         return calculatePrime();
