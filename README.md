@@ -42,6 +42,24 @@ event => {
 ### Please don't write one letter variable names unless its `i`
 It's much easier to read meaningful parameter names, even if you've seen `event` shortened to `e` in some guides
 
+### Avoid getters for expensive calculations
+It's preferrable that you write a method for expensive calculation, as it would indicate that we're starting a something long instead of just getting value of the field
+
+Bad
+```javascript
+    get prime {
+        return calculatePrime();
+    }
+```
+
+
+Bad
+```javascript
+    getPrime() {
+        return calculatePrime();
+    }
+```
+
 ## Typescript
 
 ### Avoid optional fields when they're not needed
