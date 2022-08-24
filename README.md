@@ -320,12 +320,12 @@ There is no need to wrap strings in curly braces if you pass string dirrectly
 
 Bad
 ```jsx
-<Button title={"ok"} />
+<Button variant={"primary"} />
 ```
 
 Good
 ```jsx
-<Button title="ok" />
+<Button variant="primary" />
 ```
 
 ## Styles
