@@ -315,7 +315,7 @@ const Component => (
 );
 ```
 
-### Pass string constants with string notation
+### Pass string constants without curly braces
 There is no need to wrap strings in curly braces if you pass string dirrectly
 
 Bad
