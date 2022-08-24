@@ -315,6 +315,19 @@ const Component => (
 );
 ```
 
+### Pass string constants with string notation
+There is no need to wrap strings in curly braces if you pass string dirrectly
+
+Bad
+```jsx
+<Button title={"ok"} />
+```
+
+Good
+```jsx
+<Button title="ok" />
+```
+
 ## Styles
 
 ### Don't nest classess needlessly
