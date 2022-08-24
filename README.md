@@ -262,6 +262,59 @@ editorManager.cms = cms;
 ### There should be only one file per component
 It gets very confusing and hard to navigate if there are multiple components in a single file
 
+### Don't pass props with wrapper implicitly using `React.cloneElement`
+It would make code harder to understand and debug, when by some magic wrapper affects child elements in unexpected manner
+If you need to access something from wrapper in the child, better to wrap child into render function
+
+Bad
+```jsx
+// MagicWrapper.jsx
+const MagicWrapper = ({ children })) => (
+  React.cloneElement(children, { onClick: () => {} })
+);
+
+// Component.jsx
+const Component => (
+  <MagicWrapper>
+    <button>Ok</button>
+  </MagicWrapper>
+);
+```
+
+Good
+```jsx
+// MagicWrapper.jsx
+const MagicWrapper = ({ children })) => (
+  children({ onClick: () => {} }))
+);
+
+// Component.jsx
+const Component => (
+  <MagicWrapper>
+    {({ onClick }) => (
+      <button onClick={onClick}>Ok</button>
+    )}
+  </MagicWrapper>
+);
+```
+
+Good
+```jsx
+// MagicWrapper.jsx
+const MagicWrapper = ({ render })) => (
+  render({ onClick: () => {} }))
+);
+
+// Component.jsx
+const Component => (
+  <MagicWrapper
+    render={({ onClick }) => (
+      <button onClick={onClick}>Ok</button>
+    )}
+  />
+);
+```
+
 ## Styles
 
 ### Don't nest classess needlessly
