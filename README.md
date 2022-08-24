@@ -328,6 +328,27 @@ Good
 <Button variant="primary" />
 ```
 
+### Avoid passing objects
+If you need to pass only a few props and expecially if you create object anyway, it's better to pass fields as individual props instead of object
+
+Bad
+```jsx
+<ConditionalLink
+    providerVisitLink={{
+        text: providerVisitLink.text,
+        link,
+    }}
+/>
+```
+
+Good
+```jsx
+<ConditionalLink
+    text={providerVisitLink.text}
+    link={link}
+/>
+```
+
 ## Styles
 
 ### Don't nest classess needlessly
