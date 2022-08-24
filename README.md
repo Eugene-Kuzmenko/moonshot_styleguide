@@ -329,7 +329,7 @@ Good
 ```
 
 ### Avoid passing objects
-If you need to pass only a few props and especially if you create object anyway, it's better to pass fields as individual props instead of object
+If you need to pass only a few props and especially if you create object anyway, it's better to pass fields as individual props instead of object. Also it would make component more flexible
 
 Bad
 ```jsx
