@@ -92,6 +92,19 @@ const all = {
 }
 ```
 
+### Use shorthand syntax if variable name matching the field name
+In most cases object shorthand is more readable, since there are less noise. Also it allows shorter object definition
+
+Bad
+```javascript
+const object = { field: field };
+```
+
+Good
+```javascript
+const object = { field };
+```
+
 ## React
 
 ### Dont use useMemo on simple expressions
