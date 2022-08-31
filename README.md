@@ -60,6 +60,19 @@ Good
     }
 ```
 
+### Don't copy results of the array `filter`, `map` and simillar methods
+Those methods already return copies, so there is no need to copy them
+
+Bad
+```javascript
+const filteredTabs = [...tabs.filter((tab) => tab.tabKey !== targetKey)];
+```
+
+Good
+```javascript
+const filteredTabs = tabs.filter((tab) => tab.tabKey !== targetKey);
+```
+
 ## Typescript
 
 ### Avoid optional fields when they're not needed
