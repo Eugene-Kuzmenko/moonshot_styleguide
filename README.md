@@ -274,6 +274,25 @@ return (
 )
 ```
 
+### Dont start functions with the `use` unless they are hooks
+Word use is reserved for hooks. That way eslint validates that hooks are used properly and it just gets confusing if you start non hooks with use. It loses meaning
+
+Bad
+```js
+const result = await useUpdateBulkEditorAssets(
+  this.client,
+  data
+);
+```
+
+Good
+```js
+const result = await updateBulkEditorAssets(
+  this.client,
+  data
+);
+```
+
 ### *Do not* mutate props
 It will cause issues that are hard to debug. It goes against how React is expected to work
 If you need to mutate a field during render for some reason, then the thing you're assigning probably should be declared in the component above
