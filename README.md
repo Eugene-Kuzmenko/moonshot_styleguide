@@ -73,6 +73,26 @@ Good
 const filteredTabs = tabs.filter((tab) => tab.tabKey !== targetKey);
 ```
 
+### Prefer `.forEach` to `.reduce` if you need to push into array
+It's easier to read if initial array initialization is at the start and doesn't cause us to break the rule about mutating parameters
+
+Bad
+```javascript
+const componentConfigs = components.reduce((acc, component, order) => {
+  if (!component.isActive) return;
+  acc.push({ ...component, order });
+}, []);
+```
+
+Good
+```javascript
+const componentConfigs = [];
+components.forEach((component, order) => {
+  if (!component.isActive) return;
+  componentConfigs.push({ ...component, order });
+});
+```
+
 ## Typescript
 
 ### Avoid optional fields when they're not needed
