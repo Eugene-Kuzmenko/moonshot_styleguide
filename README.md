@@ -93,6 +93,51 @@ components.forEach((component, order) => {
 });
 ```
 
+## With multiline expession start new line with an operator
+It makes it easier to find operator and looks cleaner
+
+Bad
+```
+const popupBottomPosition = (
+    searchInputBounds.y +
+    searchInputLength +
+    index * itemLength + 
+    Math.min(groupedOptions[category].length, 440) *
+    itemLength
+)
+```
+
+Good
+```
+const popupBottomPosition = (
+    searchInputBounds.y
+    + searchInputLength
+    + index * itemLength 
+    + Math.min(groupedOptions[category].length, 440)
+    * itemLength
+)
+```
+
+Bad
+```
+const isPointWithin = (
+    point.x < topRight.x &&
+    point.y < topRight.y &&
+    point.x > bottomLeft.x &&
+    point.y > bottomLeft.y
+)
+```
+
+Good
+```
+const isPointWithin = (
+    point.x < topRight.x
+    && point.y < topRight.y
+    && point.x > bottomLeft.x
+    && point.y > bottomLeft.y
+)
+```
+
 ## Typescript
 
 ### Avoid optional fields when they're not needed
