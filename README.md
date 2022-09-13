@@ -183,6 +183,21 @@ Good
 const object = { field };
 ```
 
+### Prefer verbs for naming functions
+It makes code read more naturally and more easily discern when you pass the callback
+Also they tend to be shorter sometimes
+Exceptions might be boolean functions, that might start with `is`, `should` or `has`
+
+Bad
+```javascript
+function providersValueGetter(providers, assetName, providerIndex) {
+```
+
+Good
+```javascript
+function getProviderValue(providers, assetName, providerIndex) {
+```
+
 ## React
 
 ### Dont use useMemo on simple expressions
