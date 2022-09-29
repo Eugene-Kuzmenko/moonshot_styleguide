@@ -205,6 +205,18 @@ There is no need to memo logical expression or ternary operator
 Memoisation check would be heaview
 Just memo stuff that require iteration, like string search or filtering the collection
 
+Bad
+```javascript
+  const hasLoaded = useMemo(() => (
+    isLoading && items.length > 0
+  ), [isLoading, items]);
+```
+
+Good
+```javascript
+  const hasLoaded = isLoading && items.length > 0;
+```
+
 ### Move functions outside the component
 If you have a function that doesn't use any of the variables declared within thecomponent without passing them as the parameter, move it outside the component
 or maybe into util file
