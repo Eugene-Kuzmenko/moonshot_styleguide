@@ -97,7 +97,7 @@ components.forEach((component, order) => {
 It makes it easier to find operator and looks cleaner
 
 Bad
-```
+```javascript
 const popupBottomPosition = (
     searchInputBounds.y +
     searchInputLength +
@@ -108,7 +108,7 @@ const popupBottomPosition = (
 ```
 
 Good
-```
+```javascript
 const popupBottomPosition = (
     searchInputBounds.y
     + searchInputLength
@@ -119,7 +119,7 @@ const popupBottomPosition = (
 ```
 
 Bad
-```
+```javascript
 const isPointWithin = (
     point.x < topRight.x &&
     point.y < topRight.y &&
@@ -129,7 +129,7 @@ const isPointWithin = (
 ```
 
 Good
-```
+```javascript
 const isPointWithin = (
     point.x < topRight.x
     && point.y < topRight.y
@@ -137,6 +137,41 @@ const isPointWithin = (
     && point.y > bottomLeft.y
 )
 ```
+
+### Checking multiple number ranges
+If you have multiple number ranges that go one after another with higher boundary of one range being lower boundary of the other range, if you want to check if number falls into specific range, you don't need to check both boundaries. If you start from higher range, you can just check lower boundary of the other ranges, since you've checked the higher boundary then you were checking lower boundary of previous range. Similarly if you start with lower range, then for each next range you've checked lower boundary and you only need to check higher boundary
+
+Bad
+```javascript
+if (width < 576) {
+    screen = BreakPoint.xs;
+} else if (width >= 576 && width < 768) {
+    screen = BreakPoint.s;
+} else if (width >= 768 && width < 992) {
+    screen = BreakPoint.m;
+} else if (width >= 992 && width < 1200) {
+    screen = BreakPoint.l;
+} else {
+    screen = BreakPoint.xl;
+}
+```
+
+Good
+```javascript
+if (width < 576) {
+    screen = BreakPoint.xs;
+} else if (width < 768) {
+    screen = BreakPoint.s;
+} else if (width < 992) {
+    screen = BreakPoint.m;
+} else if (width < 1200) {
+    screen = BreakPoint.l;
+} else {
+    screen = BreakPoint.xl;
+}
+```
+
+
 
 ## Typescript
 
