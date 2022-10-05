@@ -572,3 +572,32 @@ const Component = styled.div`
 `
 ```
 
+### Dont pass entire styles object
+It might become very tedious to search what styles are actually used in there, expecially if there is no type definition
+If you have multiple class names you need to pass, make them individual props. It will make it much easier to optimize with memo components
+If there is a lot of class names to be passed, consider to create a different component for other variant
+
+Bad
+```jsx
+<Accordion classNames={styles} />
+```
+
+Better
+```jsx
+<Accordion
+  classNames={{
+    collapseHeader: styles.collapseHeader,
+    icon: styles.icon,
+  }}
+/>
+```
+
+Good
+```
+<Accordion
+  headerClassName={styles.collapseHeader}
+  iconClassName={styles.icon}
+/>
+```
+
+
